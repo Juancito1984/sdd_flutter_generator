@@ -1,0 +1,59 @@
+<idea-plugin>
+    <id>com.nyk.sdd_flutter_generator</id>
+    <name>SDD Flutter Architecture Generator</name>
+    <vendor email="ingejpablo@gmail.com">Ing. Juan Pablo Gosalvez</vendor>
+    <category>Framework Integration</category>
+
+    <idea-version since-build="241"/>
+
+    <description><![CDATA[
+      Official plugin for Android Studio and IntelliJ IDEA created by Ing. Juan Pablo Gosalvez (com.nyk).
+      Automates the generation of Flutter projects and feature modules following the SDD Mobile (Spec-Driven Development Mobile) architecture with pure BLoC state management and strict layer separation (data, logic, presentation).
+
+      <h3>Features / Funcionalidades:</h3>
+      <ul>
+        <li><b>New SDD Flutter Feature:</b> Generates complete modular feature structure (data layer with models, repository contracts/implementations, and services; logic layer with BLoC, event, and state; presentation layer with Material 3 screen and widgets).</li>
+        <li><b>New SDD BLoC (logic):</b> Quickly generates connected BLoC files (bloc, event, state) using Dart part/part of directives.</li>
+        <li><b>Bootstrap SDD Project Core:</b> Sets up production base infrastructure for Flutter apps (lib/app/, lib/core/, l10n.yaml, app_es.arb, Material 3 light/dark themes, and routes).</li>
+      </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      <h3>Version 1.0.0</h3>
+      <ul>
+        <li><b>Initial Release:</b> Official launch of SDD Flutter Architecture Generator.</li>
+        <li>Added <b>New SDD Flutter Feature</b> action to generate clean modular feature folders (data, logic, presentation).</li>
+        <li>Added <b>New SDD BLoC</b> action for quick BLoC state management boilerplate generation.</li>
+        <li>Added <b>Bootstrap SDD Project Core</b> action to initialize app themes, localization (l10n), routes, and extension utilities.</li>
+        <li>Full compatibility with Android Studio 2024.1+ / 2025.x and IntelliJ IDEA.</li>
+      </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <actions>
+        <group id="com.nyk.sdd.Menu" text="SDD Flutter Generator" popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="NewGroup" anchor="last"/>
+
+            <action id="com.nyk.sdd.actions.CreateFeatureAction"
+                    class="com.nyk.sdd.actions.CreateFeatureAction"
+                    text="New SDD Flutter Feature..."
+                    description="Genera la estructura modular data, logic y presentation para un nuevo feature">
+            </action>
+
+            <action id="com.nyk.sdd.actions.CreateBlocAction"
+                    class="com.nyk.sdd.actions.CreateBlocAction"
+                    text="New SDD BLoC (logic)..."
+                    description="Genera únicamente los 3 archivos BLoC (bloc, event, state) con la estructura SDD Mobile">
+            </action>
+
+            <action id="com.nyk.sdd.actions.BootstrapProjectAction"
+                    class="com.nyk.sdd.actions.BootstrapProjectAction"
+                    text="Bootstrap SDD Project Core..."
+                    description="Genera la infraestructura base del proyecto (app, core, l10n, theme, root)">
+            </action>
+        </group>
+    </actions>
+</idea-plugin>
