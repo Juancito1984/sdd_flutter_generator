@@ -1,5 +1,6 @@
 package com.nyk.sdd.actions
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -27,13 +28,13 @@ class CreateFeatureAction : AnAction() {
                 Messages.showInfoMessage(
                     project,
                     "Feature '$featureName' generado exitosamente con arquitectura SDD Mobile.",
-                    "SDD Feature Creado"
+                    "SDD Feature Creado",
                 )
             } catch (ex: Exception) {
                 Messages.showErrorDialog(
                     project,
                     "Error al generar el feature: ${ex.message}",
-                    "Error SDD Generator"
+                    "Error SDD Generator",
                 )
             }
         }
@@ -42,4 +43,6 @@ class CreateFeatureAction : AnAction() {
     override fun update(e: AnActionEvent) {
         e.presentation.isEnabledAndVisible = e.project != null
     }
+
+    override fun getActionUpdateThread(): ActionUpdateThread = ActionUpdateThread.BGT
 }

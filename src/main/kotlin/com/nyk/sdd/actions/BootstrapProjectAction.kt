@@ -1,5 +1,6 @@
 package com.nyk.sdd.actions
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.guessProjectDir
@@ -16,7 +17,7 @@ class BootstrapProjectAction : AnAction() {
             project,
             "¿Deseas inicializar la infraestructura base SDD Mobile en el proyecto '${project.name}'?\n\nSe creará:\n- l10n.yaml y lib/l10n/app_es.arb\n- lib/core/ (utils, extensions, dates)\n- lib/app/ (theme, root, routes, bloc_providers)",
             "Bootstrap SDD Flutter Core",
-            Messages.getQuestionIcon()
+            Messages.getQuestionIcon(),
         )
 
         if (confirm == Messages.YES) {
@@ -25,13 +26,13 @@ class BootstrapProjectAction : AnAction() {
                 Messages.showInfoMessage(
                     project,
                     "Infraestructura base SDD Mobile configurada exitosamente.",
-                    "Bootstrap Completo"
+                    "Bootstrap Completo",
                 )
             } catch (ex: Exception) {
                 Messages.showErrorDialog(
                     project,
                     "Error al inicializar el proyecto: ${ex.message}",
-                    "Error SDD Bootstrapper"
+                    "Error SDD Bootstrapper",
                 )
             }
         }
@@ -40,4 +41,6 @@ class BootstrapProjectAction : AnAction() {
     override fun update(e: AnActionEvent) {
         e.presentation.isEnabledAndVisible = e.project != null
     }
+
+    override fun getActionUpdateThread(): ActionUpdateThread = ActionUpdateThread.BGT
 }

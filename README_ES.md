@@ -2,7 +2,7 @@
 
 Plugin oficial para **Android Studio** e **IntelliJ IDEA** creado por el **Ing. Juan Pablo Gosalvez** (`com.nyk`).
 
-[English Version](README_en.md) | **Versión en Español**
+[English Version](README_EN.md) | **Versión en Español**
 
 Este plugin automatiza la generación de proyectos y módulos en **Flutter** siguiendo la metodología de arquitectura **SDD Mobile (Spec-Driven Development Mobile)** con **BLoC puro**, separación estricta de capas (`data`, `logic`, `presentation`), repositorios con contratos e implementaciones, e integración nativa con **Material 3** y temas claro/oscuro.
 
@@ -114,7 +114,7 @@ flutter gen-l10n
 
 ### Requisitos de Compatibilidad
 - **IDE:** Android Studio (2024.1 / Build 241 o superior, incluyendo 2025/2026/Canary) e IntelliJ IDEA.
-- **SDK de Flutter:** Flutter 3.13.0 o superior.
+- **Flutter SDK:** Flutter 3.13.0 o superior.
 - **Gestión de Estado:** `flutter_bloc` 8.1+ / 9.0+.
 
 ### Pasos de Instalación desde Archivo Zip
@@ -138,9 +138,8 @@ Para modificar o compilar el código fuente de este plugin:
 git clone https://github.com/ingejpablo/sdd_flutter_generator.git
 cd sdd_flutter_generator
 
-# Configurar Java 21/17 y ejecutar el IDE de prueba (Sandbox)
-export JAVA_HOME=/home/juan/.jdks/jbr-21.0.11
-./gradlew runIde
+# Compilar y ejecutar pruebas
+./gradlew test
 
 # Compilar el paquete final (.zip)
 ./gradlew buildPlugin

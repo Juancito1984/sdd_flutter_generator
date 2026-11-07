@@ -1,5 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-  <rect width="40" height="40" rx="8" fill="#216971"/>
-  <path d="M22.5 10L14 21.5H20.5L17.5 30L26 18.5H19.5L22.5 10Z" fill="#BE9E34"/>
-  <path d="M10 14L14 10M10 26L14 30" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bgLight" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#164E55"/>
+      <stop offset="100%" stop-color="#216971"/>
+    </linearGradient>
+    <linearGradient id="accentGold" x1="11" y1="15" x2="20" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="flutterCyan" x1="13" y1="7" x2="31" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="40" height="40" rx="9" fill="url(#bgLight)"/>
+  <rect x="0.5" y="0.5" width="39" height="39" rx="8.5" stroke="#FFFFFF" stroke-opacity="0.15"/>
+
+  <!-- Flutter Geometric Chevrons / Architecture Layers -->
+  <path d="M22 7L13 16L17.5 20.5L31 7H22Z" fill="url(#flutterCyan)"/>
+  <path d="M22 19L16 25L20.5 29.5L26.5 23.5H26.5L22 19Z" fill="#38BDF8" fill-opacity="0.9"/>
+  <path d="M26.5 23.5L22 28L25 31L31 25L26.5 23.5Z" fill="#0284C7"/>
+
+  <!-- SDD Generator Central Spark / Diamond (BLoC core) -->
+  <path d="M11 20L15.5 15.5L20 20L15.5 24.5L11 20Z" fill="url(#accentGold)"/>
+  <circle cx="15.5" cy="20" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Architecture Foundation Base Indicator -->
+  <rect x="8" y="33" width="24" height="2" rx="1" fill="#FFFFFF" fill-opacity="0.35"/>
 </svg>

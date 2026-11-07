@@ -2,7 +2,7 @@
 
 Official plugin for **Android Studio** and **IntelliJ IDEA** created by **Ing. Juan Pablo Gosalvez** (`com.nyk`).
 
-**English Version** | [Spanish Version](README_es.md)
+**English Version** | [Spanish Version](README_ES.md)
 
 This plugin automates Flutter project and module generation following the **SDD Mobile (Spec-Driven Development Mobile)** architecture methodology, featuring **pure BLoC**, strict layer separation (`data`, `logic`, `presentation`), repositories with contracts and implementations, and native **Material 3** integration with light and dark themes.
 
@@ -138,9 +138,8 @@ To build or modify the plugin source code:
 git clone https://github.com/ingejpablo/sdd_flutter_generator.git
 cd sdd_flutter_generator
 
-# Set JAVA_HOME and run testing IDE (Sandbox)
-export JAVA_HOME=/home/juan/.jdks/jbr-21.0.11
-./gradlew runIde
+# Build and run tests
+./gradlew test
 
 # Compile the final distributable (.zip)
 ./gradlew buildPlugin

@@ -1,7 +1,7 @@
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.24"
-    id("org.jetbrains.intellij.platform") version "2.1.0"
+    id("org.jetbrains.kotlin.jvm") version "2.1.20"
+    id("org.jetbrains.intellij.platform") version "2.20.0"
 }
 
 group = "com.nyk"
@@ -19,7 +19,6 @@ dependencies {
     intellijPlatform {
         androidStudio("2024.1.1.13")
         bundledPlugin("com.intellij.java")
-        instrumentationTools()
         pluginVerifier()
     }
     testImplementation(kotlin("test"))
@@ -34,8 +33,14 @@ intellijPlatform {
     }
     pluginVerification {
         ides {
-            ide(org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.AndroidStudio, "2024.1.1.13")
+            recommended()
         }
+    }
+}
+
+tasks {
+    named("buildSearchableOptions") {
+        enabled = false
     }
 }
 

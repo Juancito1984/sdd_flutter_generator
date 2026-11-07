@@ -1,9 +1,11 @@
 package com.nyk.sdd.templates
 
+@Suppress("UNUSED_PARAMETER")
 object CodeTemplates {
 
     fun toPascalCase(text: String): String {
         return text.split("_", "-", " ")
+            .asSequence()
             .filter { it.isNotEmpty() }
             .joinToString("") { it.lowercase().replaceFirstChar { char -> char.uppercase() } }
     }
@@ -12,7 +14,7 @@ object CodeTemplates {
         return text.replace(Regex("([a-z])([A-Z])"), "$1_$2").lowercase()
     }
 
-    private const val DOLLAR = "${'$'}"
+    private const val DOLLAR = "$"
 
     // --- FEATURE TEMPLATES ---
 

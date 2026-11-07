@@ -1,6 +1,22 @@
-# Project exclude paths
+# Gradle and build outputs
 /.gradle/
 /.intellijPlatform/
 /build/
 /build/classes/
 /build/classes/kotlin/main/
+*.log
+
+# Local and environment configurations
+local.properties
+.DS_Store
+
+# IntelliJ / Android Studio user/machine specific files
+*.iml
+*.iws
+*.ipr
+.idea/workspace.xml
+.idea/shelf/
+.idea/caches/
+.idea/deviceManager.xml
+.idea/modules.xml
+.idea/kotlinc.xml
