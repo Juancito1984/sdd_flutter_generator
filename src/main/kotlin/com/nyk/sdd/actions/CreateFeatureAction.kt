@@ -10,7 +10,7 @@ import com.nyk.sdd.dialogs.CreateFeatureDialog
 import com.nyk.sdd.generators.FeatureGenerator
 
 class CreateFeatureAction : AnAction() {
-
+//
     override fun actionPerformed(e: AnActionEvent) {
         val project = e.project ?: return
         val selectedFile = e.getData(CommonDataKeys.VIRTUAL_FILE)
